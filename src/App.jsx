@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react"
 import "./App.css"
 
+
 function App() {
 
   const [tasks, setTask] = useState(()=>{
@@ -127,8 +128,9 @@ const removeTask = (id) => {
 
       <div className={`timer-card ${mode === "break" ? "break" : ""}`}>
         <p className="mode-label">{mode === "work" ? "🌸 tiempo de enfoque" : "☕ tiempo de descanso"}</p>
+         <img src = "./mascot.gif" alt="bored gif" className="mascot"/>
         <p className="current-task">{tasks[0]?.text ?? "sin tarea"}</p>
-        <p className="timer">{formatTime(seconds)}</p>
+        <p className="timer">{formatTime(seconds)}</p>    
         <div className="controls">
           <button className="btn" onClick={start}>Start</button>
           <button className="btn" onClick={pause}>Pause</button>
@@ -136,6 +138,7 @@ const removeTask = (id) => {
         </div>
       </div>
     </div>
+  
   </div>
 
   )

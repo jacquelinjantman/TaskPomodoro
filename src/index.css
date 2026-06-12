@@ -6,7 +6,7 @@
 
 body{
   background-color: #fff0f5 ;
-  font-family: "Titan One", sans-serif;
+  font-family: "Inter", sans-serif;
   color: #5c4a54;
  
   
@@ -15,4 +15,5 @@ body{
 #root{
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
 }
