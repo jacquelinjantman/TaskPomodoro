@@ -151,7 +151,7 @@ const removeTask = (id) => {
          
         </div>
       </div>
-       <img src={mascot} alt="mascota" className="mascota" style={{width: "350px", height: "350px", objectFit: "contain", position: "absolute", bottom: "10rem", right: "8rem"}}/>
+       <img src={mascot} alt="mascota" className="mascota" style={{width: "400px", height: "400px", objectFit: "contain", position: "absolute", bottom: "10rem", right: "8rem"}}/>
     </div>
   </div>
 
