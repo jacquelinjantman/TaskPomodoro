@@ -13,7 +13,7 @@ function App() {
     return saved ? JSON.parse(saved) : []
   })
   const [input, setInput] = useState("")
-  const [seconds, setSeconds] = useState (6)
+  const [seconds, setSeconds] = useState (25 * 60)
   const [isRunning, setIsRunning] = useState(false)
   const [mode, setMode] = useState ("work")
   const [pomodoroCount, setPomodoroCount] = useState(0)
