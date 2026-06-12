@@ -1,6 +1,9 @@
 
 import { useState, useEffect, useRef } from "react"
+import mascot from "./assets/mascot.gif"
 import "./App.css"
+
+
 
 
 function App() {
@@ -10,9 +13,10 @@ function App() {
     return saved ? JSON.parse(saved) : []
   })
   const [input, setInput] = useState("")
-  const [seconds, setSeconds] = useState (25 * 60)
+  const [seconds, setSeconds] = useState (6)
   const [isRunning, setIsRunning] = useState(false)
   const [mode, setMode] = useState ("work")
+  const [pomodoroCount, setPomodoroCount] = useState(0)
   const intervalRef = useRef (null)
 
     useEffect(() => {
@@ -27,12 +31,11 @@ const start = () => {
       if (s <= 1) {
         clearInterval(intervalRef.current)
         setIsRunning(false)
-        clearInterval(intervalRef.current)
 DingDong()  
-setIsRunning(false)
         setMode(prev => {
           if (prev === "work") {
-            setTask(t => t.slice(1))
+            console.log("tarea completada")
+            setPomodoroCount(prev => prev + 1)
             setSeconds(5 * 60)
             return "break"
           } else {
@@ -91,7 +94,11 @@ const addTasks = () => {
 }
 
 const removeTask = (id) => {
-    setTask(tasks.filter((tasks) => tasks.id !== id))
+    setTask(tasks.map(task => task.id === id ? {...task, completed: !task.completed} : task))
+  }
+
+  const cleanTasks = () => {
+    setTask(tasks.filter(task => !task.completed))
   }
 
   return (
@@ -118,27 +125,34 @@ const removeTask = (id) => {
               <input
                 type="checkbox"
                 className="task-check"
+                checked={task.completed || false}
                 onChange={() => removeTask(task.id)}
               />
-              <span>{task.text}</span>
+              <span style={{textDecoration: task.completed ? "line-through" : "none", opacity: task.completed ? 0.5 : 1}}>{task.text}</span>
             </li>
           ))}
         </ul>
+        <button className="btn-clean" onClick={cleanTasks} style={{background: "transparent", color:"#c490a0", border: "1.5px solid #FFB7C5", borderRadius: "50px"}}>Clean</button>
       </div>
 
       <div className={`timer-card ${mode === "break" ? "break" : ""}`}>
         <p className="mode-label">{mode === "work" ? "🌸 tiempo de enfoque" : "☕ tiempo de descanso"}</p>
-         <img src = "./mascot.gif" alt="bored gif" className="mascot"/>
         <p className="current-task">{tasks[0]?.text ?? "sin tarea"}</p>
         <p className="timer">{formatTime(seconds)}</p>    
         <div className="controls">
           <button className="btn" onClick={start}>Start</button>
           <button className="btn" onClick={pause}>Pause</button>
           <button className="btn btn-ghost" onClick={reset}>Reset</button>
+          <div className="flowers">
+            {[0, 1, 2, 3].map((i) => (
+              <span key={i} style={{fontSize:"1.5rem", opacity: i < pomodoroCount % 4 ? 1 : 0.2}}>🌸</span>
+           ) )}
+          </div>
+         
         </div>
       </div>
+       <img src={mascot} alt="mascota" className="mascota" style={{width: "150px", height: "150px", objectFit: "contain", position: "absolute", bottom: "10rem", right: "8rem"}}/>
     </div>
-  
   </div>
 
   )
