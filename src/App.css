@@ -6,7 +6,6 @@
 
 body {
   background-color: #FFF0F5;
-  font-family: 'Titan one', sans-serif;
   color: #5C4A5A;
  
 }
@@ -24,7 +23,7 @@ body {
 
 .title{
   font-size: 4em;
-  font-family: 'Titan One', sans-serif;
+  font-family: "Inter", sans-serif;
   color: #5C4A5A;
   
 }
