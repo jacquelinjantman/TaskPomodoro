@@ -104,7 +104,7 @@ const removeTask = (id) => {
   return (
     <div>
     <header className="header">
-      <h1 className="title"> pomodoro</h1>
+      <h1 className="title">🌸 pomodoro 🌸</h1>
     </header>
     <div className="wrapper">
       <div className="task-card">
