@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
    <link href="https://fonts.googleapis.com/css2?family=Betania+Patmos&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Titan+One&display=swap" rel="stylesheet">
-
+<link rel="manifest" href="/public/manifest.json"
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pomodoro</title>
@@ -11,5 +11,13 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/TaskPomodoro/sw.js');
+    });
+  }
+</script>
+  
   </body>
 </html>
