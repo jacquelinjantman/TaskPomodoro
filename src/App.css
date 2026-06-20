@@ -201,6 +201,15 @@ body {
     flex-direction: column;
   }
 
+  .timer{
+    font-size: 3.5rem;
+  }
+
+  .btn{
+    padding:0.4rem 0.8rem;
+    fontsize: 0.8rem;
+  }
+
   .task-card {
     width: 80%;
     min-width: unset;
