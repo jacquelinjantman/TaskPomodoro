@@ -19,6 +19,7 @@ body {
 .header {
   text-align: center;
    background: #FFE4EE;
+   width: 130%;
   }
 
 .title{
@@ -232,6 +233,8 @@ body {
   .timer-card {
     order: 1;
     padding: 2rem 1rem;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
