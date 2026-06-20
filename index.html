@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
    <link href="https://fonts.googleapis.com/css2?family=Betania+Patmos&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Titan+One&display=swap" rel="stylesheet">
-
-    <link rel="icon" type="image/svg+xml" href="/TaskPomodoro/favicon.svg" />
+<link rel="manifest" href="/TaskPomodoro/assets/manifest-Jk8GvQT9.json"
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pomodoro</title>
     <script type="module" crossorigin src="/TaskPomodoro/assets/index-D-e8hlo2.js"></script>
@@ -12,5 +12,13 @@
   </head>
   <body>
     <div id="root"></div>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/TaskPomodoro/sw.js');
+    });
+  }
+</script>
+  
   </body>
 </html>

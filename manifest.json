@@ -1,0 +1,16 @@
+{
+  "name": "Pomodoro",
+  "short_name": "Pomodoro",
+  "description": "A cute pomodoro timer",
+  "start_url": "/TaskPomodoro/",
+  "display": "standalone",
+  "background_color": "#FFF0F5",
+  "theme_color": "#FFB7C5",
+  "icons": [
+    {
+      "src": "icons.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
