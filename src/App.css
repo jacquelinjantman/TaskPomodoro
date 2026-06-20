@@ -142,15 +142,13 @@ body {
   font-weight: 500;
   color: #C490A0;
   letter-spacing: 0.05em;
-  padding-bottom: 0.25rem;
-  padding-right: 10rem;
 }
 
 .current-task {
   font-size: 1.25rem;
   color: #5C4A5A;
   font-style: italic;
-  padding-right: 10rem;
+  
 }
 
 .timer {
@@ -158,14 +156,14 @@ body {
   font-size: 8rem;
   color: #5C4A5A;
   letter-spacing: 0.05em;
-  padding-right: 10rem;
+  
 }
 
 .controls {
   display: flex;
   gap: 0.75rem;
   margin-top: 0.5rem;
-  padding-right: 10rem;
+
 }
 
 .btn {
